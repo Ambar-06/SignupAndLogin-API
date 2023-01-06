@@ -7,22 +7,31 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <form action="/signup" method="post">
+    <form action="/signup" method="post" id="form" enctype="multipart/form-data">
         <div>
-        <label for="email">Name</label>
-        <input type="text" name="name" placeholder="Enter your Name">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Enter your Name" id="name">
         </div>
         <div>
         <label for="email">Email</label>
-        <input type="text" name="email" placeholder="Enter your Email">
+        <input type="text" name="email" placeholder="Enter your Email" id="email">
         </div>
         <div>
-        <label for="email">Password</label>
-        <input type="password" name="password" placeholder="Create Password">
+        <label for="photo">Upload Your Photo</label>
+        <input type="file" name="photo" id="photo">
         </div>
         <div>
-        <input type="submit" value="Submit">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Create Password" id="password">
+        </div>
+        <div>
+        <label for="company">Company Name</label>
+        <input type="text" name="company" placeholder="Company" id="company">
+        </div>
+        <div>
+        <input type="button" value="Submit" id="signupbtn"/>
         </div>
     </form>
+    <script src="static/signup.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@ JWT_SECRETS = '9a60b9565dd8947f4dcee97b99896a9c8e323673634874b4555534930429a041'
 
 templates = Jinja2Templates(directory='templates')
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
 @app.get("/")
@@ -98,7 +98,7 @@ async def users_data(request:Request):
 
 
 @app.post("/users/me")
-async def users(token: str = Depends(oauth2_scheme)):
+async def users(token: str = Depends(oauth2_scheme)):   
     try:
         data = jwt.decode(token, JWT_SECRETS, algorithms='HS256') #type:ignore
         query = f"SELECT users.name, users.email, users.password, users.photo, users.admin_account, companies.company FROM users INNER JOIN companies ON users.email=companies.employee_email WHERE(email='{data.get('email')}')"
