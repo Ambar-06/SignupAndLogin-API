@@ -20,6 +20,11 @@ function loginHandler(){
             let r = JSON.parse(this.responseText);
             window.location.replace("/users");
         }
+        else if(xhr.status==404){
+            let r = JSON.parse(this.responseText);
+            let body = document.querySelector('body')
+            body.innerHTML = `<h3>${r.detail}</h3>`
+        }
         else{
             console.error("Some Error has occured.")
         }
