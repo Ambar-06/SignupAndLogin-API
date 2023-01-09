@@ -25,6 +25,11 @@ function loginHandler(){
             let body = document.querySelector('body')
             body.innerHTML = `<h3>${r.detail}</h3>`
         }
+        else if(xhr.status==400){
+            let r = JSON.parse(this.responseText);
+            let body = document.querySelector('body')
+            body.innerHTML = `<h3>${r.detail}</h3>`
+        }
         else{
             console.error("Some Error has occured.")
         }

@@ -1,0 +1,12 @@
+.bgimg{
+    border: 2px black solid;
+    background-image: url('3.jpg');
+}
+
+.left{
+    padding-left: 5em;
+}
+
+.label{
+    color: white;
+}

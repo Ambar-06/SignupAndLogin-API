@@ -52,7 +52,7 @@ def login(username: str = Form(...), password: str = Form(...)):
         raise HTTPException(status_code=404, detail=f"The user '{username}' is not registered with us.")
     
     elif info.password != password_final:
-        return {"Error": "Incorrect Password"}
+        raise HTTPException(status_code=400, detail="Incorrect Password")
 
 
 @app.get("/signup")
